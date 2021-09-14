@@ -1,0 +1,20 @@
+{%- macro render_supervisor(subform, index) %}
+
+    <div id="sup-{{ index }}-form" class="{% if index != '_' %}sup-feed{% else %}is-hidden{% endif %}" data-index="{{ index }}">
+        <div class="row">
+            <div class="col">
+            {{ subform.feedback.label(class="form-label") }}
+            {{ subform.feedback(class="form-control") }}
+            </div>
+            <div class="col">
+            {{ subform.rating.label(class="form-label") }}
+            {{ subform.rating(class="form-control") }}
+            </div>
+
+        </div>
+        
+        <a class="remove-sup" href="#">Remove</a>
+        <hr/>
+    </div>
+
+{% endmacro %}

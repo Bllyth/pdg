@@ -1,0 +1,45 @@
+{# Render lap form.
+
+This macro is intended to render both regular lap subforms (received from the
+server) and the template form used to dynamically add more forms.
+
+Arguments:
+    - subform: Form object to render
+    - index: Index of the form. For proper subforms rendered in the form loop,
+             this should match `loop.index0`, and for the template it should be
+             '_'
+#}
+{%- macro render_lap_form(subform, index) %}
+    <div id="lap-{{ index }}-form" class="{% if index != '_' %}subform{% else %}is-hidden{% endif %}" data-index="{{ index }}">
+        <div>
+            <div class="row">
+            <div class="col">
+                {{ subform.objective.label(class="form-label") }}
+                {{ subform.objective(class="form-control") }}
+            </div>
+            <div class="col">
+                {{ subform.measure_of_success.label(class="form-label") }}
+                {{ subform.measure_of_success(class="form-control") }}
+            </div>
+            <div class="col">
+                {{ subform.date_set.label(class="form-label") }}
+                {{ subform.date_set(class="form-control") }}
+            </div>
+            <div class="col">
+                {{ subform.timeline.label(class="form-label") }}
+                {{ subform.timeline(class="form-control") }}
+            </div>
+            <div class="col">
+                {{ subform.self_evaluation.label(class="form-label") }}
+                {{ subform.self_evaluation(class="form-control") }}
+            </div>
+            <div class="col">
+                {{ subform.supervisor_evaluation.label(class="form-label") }}
+                {{ subform.supervisor_evaluation(class="form-control") }}
+            </div>
+        </div>
+
+        <a class="remove" href="#">Remove</a>
+        <hr/>
+    </div>
+{%- endmacro %}
