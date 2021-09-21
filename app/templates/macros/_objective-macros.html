@@ -1,0 +1,35 @@
+{%- macro render_objective(subform, index) %}
+
+    <div id="objective-{{ index }}-form" class="{% if index != '_' %}objective{% else %}is-hidden{% endif %}" data-index="{{ index }}">
+        <div class="row">
+            <div class="col">
+            {{ subform.objective.label(class="form-label") }}
+            {{ subform.objective(class="form-control") }}
+            </div>
+            <div class="col">
+            {{ subform.measure_of_success.label(class="form-label") }}
+            {{ subform.measure_of_success(class="form-control") }}
+            </div>
+            <div class="col">
+            {{ subform.date_set.label(class="form-label") }}
+            {{ subform.date_set(class="form-control") }}
+            </div>
+            <div class="col">
+            {{ subform.timeline.label(class="form-label") }}
+            {{ subform.timeline(class="form-control") }}
+            </div>
+            <div class="col">
+            {{ subform.self_evaluation.label(class="form-label") }}
+            {{ subform.self_evaluation(class="form-control") }}
+            </div>
+            <div class="col">
+            {{ subform.supervisor_evaluation.label(class="form-label") }}
+            {{ subform.supervisor_evaluation(class="form-control") }}
+            </div>
+        </div>
+
+        <a class="remove-objective" href="#">Remove</a>
+        <hr/>
+    </div>
+
+{% endmacro %}

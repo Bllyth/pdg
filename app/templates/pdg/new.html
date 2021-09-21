@@ -1,0 +1,242 @@
+{% extends 'layout.html' %}
+
+{% import "./macros/_objective-macros.html" as macros %}
+{% import "./macros/_next_year_objectives.html" as future_macros %}
+{% import "./macros/_values-macros.html" as value_macros %}
+{% import "./macros/_training-macros.html" as training_macros %}
+
+{% block content %}
+
+    <form action="" method="POST">
+
+        {{ form.hidden_tag() }}
+
+        <div class="row g-6 mb-4">
+            <div class="col-md-4">
+                {{ form.supervisor.label(class="form-label") }}
+                {{ form.supervisor(class="form-control", disabled=True) }}
+                {% if form.supervisor.errors %}
+                        {% for error in form.supervisor.errors %}
+                            <span class="text-danger">{{ error }}</span>
+                        {% endfor %}
+                {% endif %}
+            </div>
+            <div class="col-md-4">
+                {{ form.date_of_review.label(class="form-label") }}
+                {{ form.date_of_review(class="form-control") }}
+                {% if form.date_of_review.errors %}
+                        {% for error in form.date_of_review.errors %}
+                            <span class="text-danger">{{ error }}</span>
+                        {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+        <div class="row g-6 mb-4">
+            <div class="col-md-4 ">
+                {{ form.review_year.label(class="form-label") }}
+                {{ form.review_year(class="form-control") }}
+                {% if form.review_year.errors %}
+                        {% for error in form.review_year.errors %}
+                            <span class="text-danger">{{ error }}</span>
+                        {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+
+        <ul class="nav nav-pills mb-3 mt-4" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="pills-objectives-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-objectives"
+                        type="button" role="tab" aria-controls="pills-objectives" aria-selected="true">Objectives
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-future-objectives-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-future-objectives"
+                        type="button" role="tab" aria-controls="pills-future-objectives" aria-selected="false">Future
+                    Objectives
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="#pills-values-tab" data-bs-toggle="pill" data-bs-target="#pills-values"
+                        type="button" role="tab" aria-controls="#pills-values" aria-selected="false">WIOCC values
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-training-tab" data-bs-toggle="pill" data-bs-target="#pills-training"
+                        type="button" role="tab" aria-controls="pills-training" aria-selected="false">Training and
+                    development Needs
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="self-evaluation-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-self-evaluation"
+                        type="button" role="tab" aria-controls="self-evaluation" aria-selected="false">Self Evaluation
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="supervisor-evaluation-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-supervisor-evaluation"
+                        type="button" role="tab" aria-controls="supervisor-evaluation" aria-selected="false">Supervisor
+                    Evaluation
+                </button>
+            </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-objectives" role="tabpanel"
+                 aria-labelledby="pills-objectives-tab">
+                <div class="card">
+                    <div class="card-header mb-3">
+                        <h6 class="card-subtitle p-2">
+                            Objectives should be SMART (Specific, Measurable, Attainable, Relevant and Timed)
+                        </h6>
+                    </div>
+                    <div class="card-body">
+
+                        <div id="subform-objective">
+                            {% for subform in form.objs %}
+
+                                {{ macros.render_objective(subform, loop.index0) }}
+
+                            {% endfor %}
+
+                        </div>
+                        <a id="add-objective" href="#">Add</a>
+                        <hr/>
+
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="tab-pane fade" id="pills-future-objectives" role="tabpanel"
+                 aria-labelledby="pills-future-objectives-tab">
+                <div class="card">
+                    <div class="card-header mb-3 p-2">
+
+                    </div>
+                    <div class="card-body">
+                        <h6 class="card-title">PDG Objectives Label Next Year</h6>
+                        <p class="card-text ">
+                            Objectives should be SMART (Specific, Measurable, Attainable, Relevant and Timed)
+                        </p>
+                        <div id="subform-future">
+                            {% for subform in form.futures %}
+
+                                {{ future_macros.render_future_objective(subform, loop.index0) }}
+
+                            {% endfor %}
+
+                        </div>
+                        <a id="add-future" href="#">Add</a>
+                        <hr/>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="tab-pane fade" id="pills-values" role="tabpanel" aria-labelledby="pills-values-tab">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+            <div class="col">
+            {{ values_form.client_focus.label(class="form-label") }}
+            {{ values_form.client_focus(class="form-control") }}
+            </div>
+            <div class="col">
+            {{ values_form.boundless.label(class="form-label") }}
+            {{ values_form.boundless(class="form-control") }}
+            </div>
+            <div class="col">
+            {{ values_form.collaborate.label(class="form-label") }}
+            {{ values_form.collaborate(class="form-control") }}
+            </div>
+            <div class="col">
+            {{ values_form.integrity.label(class="form-label") }}
+            {{ values_form.integrity(class="form-control") }}
+            </div>
+            <div class="col">
+            {{ values_form.personal_excellence.label(class="form-label") }}
+            {{ values_form.personal_excellence(class="form-control") }}
+            </div>
+        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="tab-pane fade" id="pills-training" role="tabpanel" aria-labelledby="pills-training-tab">
+                <div class="card">
+                    <div class="card-body">
+                        <div id="subform-training">
+                            {% for subform in form.trainings %}
+
+                                {{ training_macros.render_training(subform, loop.index0) }}
+
+                            {% endfor %}
+
+                        </div>
+                        <a id="add-training" href="#">Add</a>
+                        <hr/>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="tab-pane fade" id="pills-self-evaluation" role="tabpanel"
+                 aria-labelledby="pills-self-evaluation-tab">
+                <div class="card">
+                    <div class="card-body">
+                        {{ form.employee_feedback.label(class="form-label") }}
+                        {{ form.employee_feedback(class="form-control") }}
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="tab-pane fade" id="pills-supervisor-evaluation" role="tabpanel"
+                 aria-labelledby="pills-supervisor-evaluation-tab">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                {{ form.supervisor_feedback.label(class="form-label") }}
+                                {{ form.supervisor_feedback(class="form-control") }}
+                            </div>
+                            <div class="col">
+                                {{ form.rating.label(class="form-label") }}
+                                {{ form.rating(class="form-control") }}
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            {#                {{ form.submit() }}#}
+            <div class="row">
+
+                {#                <button style="background-color: #7367F0;" type="submit" name="btn" value="submit">Submit</button>#}
+                {#                <button class="ml-2 btn btn-info" type="submit" name="btn" value="save">Save</button>#}
+                <div class="col-1">
+                    <button type="submit"
+                            class="btn btn-primary" name="btn" value="submit">Submit
+                    </button>
+                </div>
+                <div class="col-1">
+                    <button type="submit" class="btn btn-info" name="btn" value="save">Save</button>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+    {{ macros.render_objective(objective_form, '_') }}
+    {{ future_macros.render_future_objective(future_form, '_') }}
+    {{ training_macros.render_training(training_form, '_') }}
+    {{ value_macros.render_value(values_form, '_') }}
+
+
+
+{% endblock %}

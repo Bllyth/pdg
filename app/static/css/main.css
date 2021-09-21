@@ -1,0 +1,63 @@
+html {
+    font-size: 14px;
+    height: 100%;
+    letter-spacing: .01rem;
+}
+
+html body {
+    height: 100%;
+    background-color: #F8F8F8;
+    direction: ltr
+}
+
+html body p {
+    line-height: 1.5rem
+}
+
+html .content.app-content {
+    padding: 0 2rem;
+}
+
+.header {
+    background: #FFF;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #20368b;
+}
+
+.is-hidden {
+    display: none;
+}
+
+.nav-blue {
+    background: #20368b;
+}
+
+.btn-primary {
+    background-color: #20368b;
+    border-color: #20368b;
+}
+
+.btn-info {
+    color: #fff;
+    background-color: #009CCF;
+    border-color: #009CCF;
+}
+
+.navbar-brand {
+    margin-right: 6rem;
+}
+.nav-link {
+    border: 1px solid #fff;
+    background: transparent;
+    color: #fff;
+    font-size: 11px;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.nav-link:hover{
+    color: #e3122a;
+}

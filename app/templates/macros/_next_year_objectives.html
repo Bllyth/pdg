@@ -1,0 +1,24 @@
+{%- macro render_future_objective(subform, index) %}
+
+    <div id="future-{{ index }}-form" class="{% if index != '_' %}future{% else %}is-hidden{% endif %}" data-index="{{ index }}">
+        <div class="row">
+            <div class="col">
+            {{ subform.objective.label(class="form-label") }}
+            {{ subform.objective(class="form-control") }}
+            </div>
+            <div class="col">
+            {{ subform.measure_of_success.label(class="form-label") }}
+            {{ subform.measure_of_success(class="form-control") }}
+            </div>
+
+            <div class="col">
+            {{ subform.timeline.label(class="form-label") }}
+            {{ subform.timeline(class="form-control") }}
+            </div>
+        </div>
+        
+        <a class="remove-future" href="#">Remove</a>
+        <hr/>
+    </div>
+
+{% endmacro %}

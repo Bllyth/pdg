@@ -1,0 +1,31 @@
+{%- macro render_value(subform, index) %}
+
+    <div id="value-{{ index }}-form" class="{% if index != '_' %}values{% else %}is-hidden{% endif %}" data-index="{{ index }}">
+        <div class="row">
+            <div class="col">
+            {{ subform.client_focus.label(class="form-label") }}
+            {{ subform.client_focus(class="form-control") }}
+            </div>
+            <div class="col">
+            {{ subform.boundless.label(class="form-label") }}
+            {{ subform.boundless(class="form-control") }}
+            </div>
+            <div class="col">
+            {{ subform.collaborate.label(class="form-label") }}
+            {{ subform.collaborate(class="form-control") }}
+            </div>
+            <div class="col">
+            {{ subform.integrity.label(class="form-label") }}
+            {{ subform.integrity(class="form-control") }}
+            </div>
+            <div class="col">
+            {{ subform.personal_excellence.label(class="form-label") }}
+            {{ subform.personal_excellence(class="form-control") }}
+            </div>
+        </div>
+        
+        <a class="remove-value" href="#">Remove</a>
+        <hr/>
+    </div>
+
+{% endmacro %}
