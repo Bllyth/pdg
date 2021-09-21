@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="f7c35c88-e0c5-4524-a3e9-ba32d779eb81" name="PDG">
+        <fileTransfer rootFolder="/home/pdg/pdg" accessType="SFTP" host="51.103.47.32" port="22" sshConfigId="29f7b2f0-26bd-4767-b4e1-f9e6b9f3a990" sshConfig="pdg@51.103.47.32:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="5cb936cc-5fcc-4d85-b317-5f8fd06ebcbc" name="WIOCC_PDG">
+        <fileTransfer rootFolder="/home/leonard" accessType="SFTP" host="102.37.97.57" port="22" sshConfigId="ab2f50f2-b557-4c00-ae5d-d969d31ef488" sshConfig="leonard@102.37.97.57:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
