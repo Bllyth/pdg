@@ -1,0 +1,200 @@
+.header {
+    font-size: 8pt;
+    border-bottom: height:5pt, color:#333;background-color:#333;;
+}
+table {
+    font-family: helvetica;
+    font-size: 8pt;
+    table-layout: fixed;
+    width: 100%;
+    border-color: #a9a9a9;
+}
+
+th {
+    font-size: 8pt;
+    padding-left: 6px;
+}
+
+td {
+    padding-right: 6px;
+    padding-left: 6px;
+}
+
+b {
+    font-weight: bold;
+    color: #0c547b;
+}
+
+table.header td {
+    padding: 0px;
+    font-size: 8pt;
+}
+
+table.footer td {
+    padding: 0px;
+    font-size: 8pt;
+}
+
+table.docheader {
+    border-style: solid;
+    border-width: 1px;
+    font-size: 8pt;
+}
+
+table.docheader th {
+    padding-bottom: 2px;
+    padding-top: 2px;
+    border-right-width: 1px;
+    border-right-color: #a9a9a9;
+}
+
+table.docheader td {
+    padding-top: 3px;
+    border-top-width: 1px;
+    border-top-color: #a9a9a9;
+    border-right-width: 1px;
+    border-right-color: #a9a9a9;
+}
+
+table.itemtable {
+    border-style: solid;
+    border-width: 1px;
+    font-size: 8pt;
+
+}
+
+table.itemtable
+th {
+    background-color: #D3D3D3;
+    padding-bottom: 6px;
+    padding-top: 6px;
+    border-right-width: 1px;
+    border-right-color: #a9a9a9;
+    font-weight: bold;
+    font-size: 8pt;
+}
+
+table.itemtable td {
+    padding-top: 3px;
+    border-top-width: 1px;
+    border-top-color: #a9a9a9;
+    border-right-width: 1px;
+    border-right-color: #a9a9a9;
+}
+
+table.orderdesctable {
+    border-style: solid;
+    border-width: 1px;
+    font-size: 8pt;
+}
+
+table.orderdesctable th {
+    background-color: #D3D3D3;
+    padding-bottom: 2px;
+    padding-top: 2px;
+}
+
+table.orderdesctable td {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-top-width: 1px;
+    border-top-color: #a9a9a9;
+    border-right-width: 1px;
+    border-right-color: #a9a9a9;
+}
+
+table.termstable {
+    border-style: solid;
+    border-width: 1px;
+    font-size: 6pt;
+}
+
+table.termstable th {
+    background-color: #D3D3D3;
+    padding-bottom: 2px;
+    padding-top: 2px;
+}
+
+table.termstable td {
+    padding-top: 2px;
+    border-top-width: 1px;
+    border-top-color: #a9a9a9;
+}
+
+table.important {
+    border-style: solid;
+    border-width: 1px;
+}
+
+table.important th {
+    padding-bottom: 2px;
+    padding-top: 2px;
+    background-color: #D3D3D3;
+}
+
+table.important td {
+    padding-top: 2px;
+    border-top-width: 1px;
+    border-top-color: #a9a9a9;
+}
+
+table.signoff {
+    border-style: solid;
+    border-width: 1px;
+
+}
+
+table.signoff th {
+    padding-bottom: 2px;
+    border-bottom-width: 1px;
+    border-bottom-color: #a9a9a9;
+    padding-top: 2px;
+    background-color: #D3D3D3;
+    font-weight: bold;
+}
+
+table.signoff td {
+    padding-bottom: 8px;
+    padding-top: 8px;
+}
+
+table.signoff td.rborder {
+    padding-bottom: 8px;
+    padding-top: 8px;
+    border-right-width: 1px;
+    border-right-color: #a9a9a9;
+}
+
+table.body td {
+    padding-top: 2px;
+}
+
+td.addressheader {
+    font-size: 8pt;
+    padding-top: 6px;
+    padding-bottom: 2px;
+}
+
+td.address {
+    padding-top: 0px;
+}
+
+span.title {
+    font-size: 28pt;
+}
+
+span.number {
+    font-size: 16pt;
+}
+
+span.itemname {
+    font-weight: bold;
+    line-height: 150%;
+}
+
+hr {
+    width: 100%;
+    color: #d3d3d3;
+    background-color: #d3d3d3;
+    height: 2px;
+}

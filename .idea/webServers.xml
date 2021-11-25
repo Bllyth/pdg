@@ -2,15 +2,22 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="f7c35c88-e0c5-4524-a3e9-ba32d779eb81" name="PDG">
-        <fileTransfer rootFolder="/home/pdg/pdg" accessType="SFTP" host="51.103.47.32" port="22" sshConfigId="29f7b2f0-26bd-4767-b4e1-f9e6b9f3a990" sshConfig="pdg@51.103.47.32:22 key" keyPair="true">
+      <webServer id="3a1c8621-1e65-46e5-b152-5f97d597a0b8" name="PDG">
+        <fileTransfer rootFolder="/home/leonard/pdg" accessType="SFTP" host="102.37.98.162" port="22" sshConfigId="f0a233af-c652-4899-acb4-f01ff79ede44" sshConfig="leonard@102.37.98.162:22 password">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>
         </fileTransfer>
       </webServer>
-      <webServer id="5cb936cc-5fcc-4d85-b317-5f8fd06ebcbc" name="WIOCC_PDG">
-        <fileTransfer rootFolder="/home/leonard" accessType="SFTP" host="102.37.97.57" port="22" sshConfigId="ab2f50f2-b557-4c00-ae5d-d969d31ef488" sshConfig="leonard@102.37.97.57:22 password">
+      <webServer id="23463b0b-4450-4fbe-b657-1edb7a4d39f4" name="PDG Test">
+        <fileTransfer rootFolder="/home/leonard.muriithi/pdg" accessType="SFTP" host="172.16.1.113" port="22" sshConfigId="9d4303ae-61b0-4266-834d-049c11aef44a" sshConfig="leonard.muriithi@172.16.1.113:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="d96a923e-649d-4f40-ae9d-aced8c9afdc3" name="bcl">
+        <fileTransfer rootFolder="/home/bcl" accessType="SFTP" host="40.121.71.139" port="22" sshConfigId="40f8548a-98f1-42d9-8897-165a6060cdf3" sshConfig="bcl@40.121.71.139:22 key" keyPair="true">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>

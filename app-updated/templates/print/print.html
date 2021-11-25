@@ -1,0 +1,329 @@
+<?xml version="1.0"?>
+<!DOCTYPE pdf PUBLIC "-//big.faceless.org//report" "report-1.1.dtd">
+<pdf>
+    <head>
+        <style>
+            @page {
+                @top-center {
+                    content: url("../../static/img/wiocc_logo.png");
+                }
+            }
+
+            table {
+                font-family: helvetica;
+                font-size: 8pt;
+                table-layout: fixed;
+                width: 100%;
+                border-color: #a9a9a9;
+                border-style: solid;
+                border-width: 1px;
+            }
+
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 8px
+            }
+
+            th, td {
+                padding: 5px;
+                text-align: left;
+            }
+
+            th {
+                font-size: 8pt;
+                padding-left: 6px;
+                background-color: #D3D3D3;
+                border-bottom: 1px;
+            }
+
+        </style>
+
+    </head>
+    <body>
+    {#    <div style="text-align: center;">#}
+    {#        <img src="../../static/img/wiocc_logo.png" style="text-align: center; height: 49px; width: 230px;">#}
+    {#    </div>#}
+    <div style="text-align: center; font-style: italic;">
+        <h3>PROGRESS AND DEVELOPMENT GUIDE</h3>
+    </div>
+    <div>
+        <p>
+            At the end of each performance cycle, a formal review of achievements in relation to the performance
+            standards is documented. This form will assist the Employee and the Supervisor evaluate performance, set
+            targets for next year and document any training needs.
+        </p>
+    </div>
+
+    <div>
+        <h4>Employee Details</h4>
+
+        <table>
+            <tbody>
+            <tr>
+                <th colspan="2" align="left">Name</th>
+                <td colspan="2" align="left">{{ user.username }}</td>
+                <th colspan="2" align="left">Job Title</th>
+                <td colspan="2" align="left">{{ user.position }}</td>
+            </tr>
+            <tr>
+                <th colspan="2" align="left">Review Period</th>
+                <td colspan="2" align="left">{{ pdg.review_year }}</td>
+                <th colspan="2" align="left">Date of Last Review</th>
+                <td colspan="2" align="left"></td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <div>
+        <h4>Objectives should be SMART (Specific, Measurable, Attainable, Relevant and Timed)</h4>
+
+        <table>
+            <thead>
+            <tr>
+                <th colspan="2" align="left">Date of Review</th>
+                <td colspan="2" align="left">{{ pdg.date_of_review }}</td>
+            </tr>
+            <tr>
+                <th colspan="3" align="left">Objectives</th>
+                <th colspan="3" align="left">Measures of Success</th>
+                <th colspan="2" align="left">Timeline</th>
+                <th colspan="2" align="left">Date Set</th>
+                <th colspan="3" align="left">Self-Evaluation</th>
+                <th colspan="3" align="left">Supervisor Evaluation</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for objective in pdg.objectives %}
+                <tr>
+                    <td colspan="3">{{ objective.objective }}</td>
+                    <td colspan="3" align="left">{{ objective.measure_of_success }}</td>
+                    <td colspan="2" align="left">{{ objective.timeline }}</td>
+                    <td colspan="2" align="left">{{ objective.date_set }}</td>
+                    <td colspan="3" align="left">{{ objective.self_evaluation }}</td>
+                    <!--					<td colspan="4" align="left"></td>-->
+                    <td colspan="3" align="left">{{ objective.supervisor_evaluation }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+    <div>
+        <h4>WIOCC's Values</h4>
+
+        <table>
+            <tbody>
+            <tr>
+                <th colspan="2" align="left">
+                    How have you demonstrated, implemented & incorporated the Company values as an individual towards
+                    achieving your objectives?
+                </th>
+
+            </tr>
+            <tr>
+                <th colspan="2" align="left">Customer Focus</th>
+                <td colspan="2" align="left">{{ value.client_focus }}</td>
+            </tr>
+            <tr>
+                <th colspan="2" align="left">Integrity</th>
+                <td colspan="2" align="left">{{ value.integrity }}</td>
+            </tr>
+            <tr>
+                <th colspan="2" align="left">Boundless</th>
+                <td colspan="2" align="left">{{ value.boundless }}</td>
+            </tr>
+            <tr>
+                <th colspan="2" align="left">Personal Excellence</th>
+                <td colspan="2" align="left">{{ value.personal_excellence }}</td>
+            </tr>
+            <tr>
+                <th colspan="2" align="left">Collaborate</th>
+                <td colspan="2" align="left">{{ value.collaborate }}</td>
+            </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+
+    <div>
+        <h4>Set objectives (SMART) for Next year</h4>
+
+        <table>
+            <thead>
+            <tr>
+                <th colspan="4" align="left">Objectives</th>
+                <th colspan="4" align="left">Measures of Success</th>
+                <th colspan="2" align="left">Timeline</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for objective in pdg.futures %}
+                <tr>
+                    <td colspan="4">{{ objective.objective }}</td>
+                    <td colspan="4" align="left">{{ objective.measure_of_success }}</td>
+                    <td colspan="2" align="left">{{ objective.timeline }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <h4>Training and Development Needs</h4>
+        <p>
+            Employee and supervisor discuss and document development goals to be achieved during the next performance
+            cycle. These may include formal training, on-the-job training, temporary project assignments or coaching &
+            mentoring programs.<br>
+            This should include an assessment of how much a priority the development goal is:
+        </p>
+        <h4>(C) = Critical; (M) = Moderate; and (VA) = Value Added</h4>
+        <p>Target dates for achievement of these development goals are outlined, along with any explanation of how they
+            will help the employee’s personal or professional development. To identify these goals, employee and
+            supervisor review development needs identified in the previous performance cycle.</p>
+
+
+        <table>
+            <thead>
+            <tr>
+                <th colspan="4" align="left">Development Goals/Purpose</th>
+                <th colspan="4" align="left">Priority</th>
+                <th colspan="2" align="left">Target Dates</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for training in pdg.trainings %}
+                <tr>
+                    <td colspan="4">{{ training.purpose }}</td>
+                    <td colspan="4" align="left">{{ training.priority }}</td>
+                    <td colspan="2" align="left">{{ training.target_date }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+
+    <div>
+        <h4>Employee’s Overall Feedback</h4>
+        <p>
+            {% if pdg.employee_feedback %}
+                {{ pdg.employee_feedback }}
+            {% endif %}
+        </p>
+    </div>
+
+    <div>
+        <h4>Supervisor’s Overall Feedback and Rating</h4>
+        <p>At the end of the evaluation the supervisor is required to indicate the employee’s overall performance by
+            using the following assessment scale.
+        </p>
+
+        <h4>Overall Feedback from Supervisor</h4>
+        <p>
+            {% if pdg.supervisor_feedback %}
+                {{ pdg.supervisor_feedback }}
+            {% endif %}
+        </p>
+
+        <div>
+
+            <h4>Assessment Rating Definitions</h4>
+
+            <table>
+                <tbody>
+                <tr>
+                    <th colspan="2" align="left">
+                        Overall Rating (tick as appropriate)
+                    </th>
+
+                </tr>
+                <tr>
+                    <th colspan="2" align="left">Exceeds Expectations
+                    </th>
+                    <td colspan="2" align="left"></td>
+                </tr>
+                <tr>
+                    <th colspan="2" align="left">Above Expectations
+                    </th>
+                    <td colspan="2" align="left"></td>
+                </tr>
+                <tr>
+                    <th colspan="2" align="left">Meets Expectations</th>
+                    <td colspan="2" align="left"></td>
+                </tr>
+                <tr>
+                    <th colspan="2" align="left">Improvement Needed</th>
+                    <td colspan="2" align="left"></td>
+                </tr>
+                <tr>
+                    <th colspan="2" align="left">Unsatisfactory</th>
+                    <td colspan="2" align="left"></td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+
+        {#        <h4>Assessment Rating Definitions</h4>#}
+        {#        <ul>#}
+        {#            <li>Exceeds expectations - Consistently exceeds the required standard of performance</li>#}
+        {#            <li>Above expectations - Significantly higher than the required standard of performance</li>#}
+        {#            <li>Meets expectations - Fully meets the required standard of performance</li>#}
+        {#            <li>Improvement needed - below the required standard of performance</li>#}
+        {#            <li>Unsatisfactory - does not meet the required standard of performance</li>#}
+        {#        </ul>#}
+
+{#        <table>#}
+{#            <tbody>#}
+{#            <tr>#}
+{#                <th colspan="2" align="left">Rating</th>#}
+{#                <td colspan="2" align="left">#}
+{#                    {% if pdg.rating %}#}
+{#                        {{ pdg.rating }}#}
+{#                    {% endif %}#}
+{#                </td>#}
+{#            </tr>#}
+{##}
+{#            </tbody>#}
+{#        </table>#}
+
+
+    </div>
+
+
+    <div>
+        <table>
+            <tbody>
+            <tr>
+                <th colspan="4">Name of Employee</th>
+                <th colspan="4" align="left">Name of Supervisor</th>
+
+            </tr>
+            <tr>
+                <td colspan="4">{{ user.username }}</td>
+                <td colspan="4" align="left">{{ supervisor.username }}</td>
+
+            </tr>
+            <tr>
+                <th colspan="4">Signature of Employee</th>
+                <th colspan="4" align="left">Signature of Supervisor</th>
+
+            </tr>
+            <tr>
+                <td colspan="4">___________________________</td>
+                <td colspan="4">___________________________</td>
+
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    </body>
+
+</pdf>

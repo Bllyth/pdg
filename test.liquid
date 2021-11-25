@@ -1,0 +1,35 @@
+<div>
+
+    {%- if product.metafields.product.link != blank -%}
+
+        <div>
+            <div class="button">
+                {{ product.metafields.product.link }}
+                <a href="{{ product.metafields.product.link }}">Visit Link</a>
+            </div>
+
+        </div>
+
+    {%- endif -%}
+    {%- if product.metafields.product.instagram != blank -%}
+
+        <div>
+
+            <div class="button">
+                <a href="{{ product.metafields.product.instagram }}">Instagram</a>
+            </div>
+
+        </div>
+
+    {%- endif -%}
+    {%- if product.metafields.product.video != blank -%}
+
+        <div>
+            <div class="button">
+                <a href="{{ product.metafields.product.video }}">Video</a>
+            </div>
+
+        </div>
+
+    {%- endif -%}
+</div>

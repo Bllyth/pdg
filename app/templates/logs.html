@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+
+    <div class="card">
+        <div class="table-responsive px-3 py-5">
+            <table class="table" id="datatable">
+
+                <thead>
+                <tr>
+                    <th colspan="10" scope="col">
+                        <div class="d-flex col-6" id="filtertable"></div>
+                    </th>
+
+                </tr>
+
+                <tr>
+                    <th>PDG ID</th>
+                    <th>User</th>
+                    <th>action</th>
+                    <th>Time</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                {% for log in logs %}
+
+                    <tr>
+                        <td>{{ log.pdg_id }}</td>
+                        <td>{{ log.user }}</td>
+                        <td>{{ log.action }}</td>
+                        <td>{{ log.time }}</td>
+                    <td></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

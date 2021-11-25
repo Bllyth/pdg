@@ -7,15 +7,18 @@ def str2bool(v):
 
 os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
 
+basedir = os.path.abspath(os.path.dirname(__file__))
+
 
 class Config(object):
     SECRET_KEY = 'kjhfgdhjkbd78435n4fsdgrt756ytru67867yhrt3454uyoihy0943u34j9r8y34908'
 
-    SQLALCHEMY_DATABASE_URI = 'mssql+pymssql://sa:admin123@localhost/test'
+    SQLALCHEMY_DATABASE_URI = 'mssql+pymssql://sa:admin123*@localhost/test'
     # Password
     # pcZkkB2HtjUDvq
 
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    PDGS_PER_PAGE = 3
 
     CLIENT_ID = "c2b23466-72d6-4a1b-9f78-3200e6c808b5"
 
@@ -37,3 +40,5 @@ class Config(object):
 
     REQUIRE_AUTHENTICATION = str2bool('true')  # Obviously, should be true in prod
     HTTPS_SCHEME = 'https' if APP_URL.startswith('https') else 'http'
+
+    FILES = os.path.join(basedir, 'files-old/')

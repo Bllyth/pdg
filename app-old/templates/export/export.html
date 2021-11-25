@@ -1,0 +1,25 @@
+<table class="itemtable">
+    <thead>
+    <tr>
+        <th colspan="4" align="left">Employee Name</th>
+        <th colspan="4" align="left">Current Position</th>
+        <th colspan="2" align="left">Review Period</th>
+        <th colspan="2" align="left">Overall Feedback from Employee</th>
+        <th colspan="4" align="left">Overall Feedback from Supervisor</th>
+        <th colspan="4" align="left">Overall Rating</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for objective in pdg.objectives %}
+    <tr>
+        <td colspan="4">{{ objective.objective }}</td>
+        <td colspan="4" align="left">{{ objective.measure_of_success }}</td>
+        <td colspan="2" align="left">{{ objective.timeline }}</td>
+        <td colspan="2" align="left">{{ objective.date_set }}</td>
+        <td colspan="4" align="left">{{ objective.self_evaluation }}</td>
+        <!--					<td colspan="4" align="left"></td>-->
+        <td colspan="4" align="left">{{ objective.supervisor_evaluation }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>

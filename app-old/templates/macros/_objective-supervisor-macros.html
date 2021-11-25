@@ -1,0 +1,10 @@
+{%- macro render_supervisor_objective(subform, index) %}
+
+    <div id="objective-{{ index }}-form" class="{% if index != '_' %}objective{% else %}is-hidden{% endif %}" data-index="{{ index }}">
+            <td class="col">
+            {{ subform.supervisor_evaluation.label(class="form-label") }}
+            {{ subform.supervisor_evaluation(class="form-control") }}
+            </td>
+    </div>
+
+{% endmacro %}

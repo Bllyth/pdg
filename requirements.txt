@@ -39,3 +39,5 @@ URLObject==2.4.3
 Werkzeug==2.0.1
 WTForms==2.3.3
 XlsxWriter==3.0.1
+weasyprint
+flask-weasyprint

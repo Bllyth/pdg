@@ -2,8 +2,9 @@
 <project version="4">
   <component name="SshConfigs">
     <configs>
-      <sshConfig host="51.103.47.32" id="29f7b2f0-26bd-4767-b4e1-f9e6b9f3a990" keyPath="C:\Users\LeonardMuriithi\Pictures\pdg_key.pem" port="22" nameFormat="DESCRIPTIVE" username="pdg" />
-      <sshConfig authType="PASSWORD" host="102.37.97.57" id="ab2f50f2-b557-4c00-ae5d-d969d31ef488" port="22" nameFormat="DESCRIPTIVE" username="leonard" />
+      <sshConfig authType="PASSWORD" host="102.37.98.162" id="f0a233af-c652-4899-acb4-f01ff79ede44" port="22" nameFormat="DESCRIPTIVE" username="leonard" />
+      <sshConfig authType="PASSWORD" host="172.16.1.113" id="9d4303ae-61b0-4266-834d-049c11aef44a" port="22" nameFormat="DESCRIPTIVE" username="leonard.muriithi" />
+      <sshConfig host="40.121.71.139" id="40f8548a-98f1-42d9-8897-165a6060cdf3" keyPath="$USER_HOME$/bcl_key.pem" port="22" nameFormat="DESCRIPTIVE" username="bcl" />
     </configs>
   </component>
 </project>

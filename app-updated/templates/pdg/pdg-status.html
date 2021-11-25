@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+
+    <div class="card">
+        <div class="table-responsive px-3 py-5">
+            <table class="table" id="datatable">
+
+                <thead>
+                <tr>
+                    <th colspan="10" scope="col">
+                        <div class="d-flex col-6" id="filtertable"></div>
+                    </th>
+
+                </tr>
+
+                <tr>
+
+                    <th>User</th>
+                    <th>Supervisor</th>
+                    <th>Current Position</th>
+                    <th>Has PDG</th>
+                    <th>Status</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                {% for user in users %}
+
+                    <tr>
+                        <td>{{ user.username }}</td>
+                        <td>{{ user.supervisor }}</td>
+                        <td>{{ user.position }}</td>
+                        <td>
+                            {% if user.has_pdg == True %}
+                                Yes
+                                {% else %}
+                                No
+                            {% endif %}
+
+                        </td>
+                        <td>{{ user.pdg_status }}</td>
+                    <td></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}
